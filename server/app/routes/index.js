@@ -5,6 +5,7 @@ module.exports = router;
 router.use('/members', require('./members'));
 router.use('/dreamers', require('./dreamers')); 
 router.use('/dreams', require('./dreams')); 
+router.use('/tags', require('./tags')); 
 
 // Make sure this is after all of
 // the registered routes!
