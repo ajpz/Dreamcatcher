@@ -16,8 +16,14 @@ article.dream {
     color: $medium-blue;
     font-size: 11px;
   }
-  span .dream-tag .label-default {
+  span.dream-tag {
     background-color: $super-bright-blue;
     color: $darkest-blue;
+    margin-right: 4px;
   }
 }
+
+span.filter-title {
+    color: $super-bright-blue;
+    font-size: 12px;
+  }

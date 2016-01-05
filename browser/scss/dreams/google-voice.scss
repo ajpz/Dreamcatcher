@@ -1,0 +1,17 @@
+@import '../variables';
+
+google-voice {
+  i.record-icon {
+    margin-right: 5px;
+  }
+  .record-button {
+    font-family: $header-font-stack;
+    border: 0px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    background: $neon-green;
+    outline: none !important;
+    float: right;
+    margin-bottom: 5px;
+  }
+}

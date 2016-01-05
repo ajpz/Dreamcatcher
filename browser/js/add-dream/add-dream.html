@@ -13,15 +13,19 @@
 
         <div class="form-group">
           <label for="title">Give your dream a title (optional)</label><br/>
-          <input name="title" class="form-control" type="text" ng-model="dream.title" placeholder="I dreamed a dream…">
+          <input name="title" class="form-control" type="text" ng-model="dream.title">
         </div>
 
-        <text-angular name="wysiwig-form" ng-model="dream.content"></text-angular>
-        <google-voice></google-voice>
+        <!-- <text-angular name="wysiwig-form" ng-model="dream.content"></text-angular> -->
+        <div class="form-group">
+          <label for="dream-content" style="float: left; padding-top: 15px;">Write (or record) all about the dream below…</label>
+          <google-voice></google-voice>
+          <textarea rows="6" class="form-control" ng-model="dream.content" required></textarea>
+        </div>
 
         <h2>Add Tags to describe your dream</h2>
 
-        <oi-select oi-options="tag for tag in tags" ng-model="dream.tags" multiple placeholder="Select"></oi-select>
+        <oi-select oi-options="tag for tag in tags | orderBy: tag" ng-model="dream.tags" multiple placeholder="Add a tag…"></oi-select>
 
         <button id="add-dream-btn" class="btn bright-button btn-lg" ng-click="addDream()">Add dream to your diary</button>
 

@@ -1,13 +1,8 @@
 <div class="container">
 
-  <div class="row">  
-    <oi-select oi-options="tag for tag in tags | orderBy: tag" ng-model="selectedTag" placeholder="Select" multiple></oi-select>
-  </div>
-  <br>
-
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2" ng-repeat="dream in dreams | tagFilter: selectedTag">
-      <article class="dream box">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+      <article class="dream box" ng-repeat="dream in dreams | tagFilter: selectedTag">
         <h2 class="dream-title text-center">{{ dream.title }}</h2>
         <p class="dream-date text-center">{{ dream.date | date: 'medium' }}</span>
         <hr class="text-center">
@@ -15,6 +10,16 @@
         <span class="label label-default dream-tag" ng-repeat="tag in dream.tags">{{ tag }}</span>
       </article>
     </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="box">
+        <h3>Filter</h3>
+
+        <span class="filter-title">By Tags</span>
+        <oi-select oi-options="tag for tag in tags | orderBy: tag" ng-model="selectedTag" placeholder="Select" multiple></oi-select>
+      </div>
+    </div>
+
   </div>
 
 </div>

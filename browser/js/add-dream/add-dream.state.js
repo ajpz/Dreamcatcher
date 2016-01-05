@@ -28,7 +28,7 @@ app.controller('AddDreamCtrl', function($scope, $rootScope, DreamFactory, Sessio
   $rootScope.$on('dreamSpoken', function(newValue, oldValue) {
     console.log('watch worked!!!!!')
     if(newValue !== oldValue) {
-     $scope.dream.content += SpeechFactory.getDreamText(); 
+     $scope.dream.content += " " + SpeechFactory.getDreamText(); 
      $scope.$apply();    
     }
   }); 

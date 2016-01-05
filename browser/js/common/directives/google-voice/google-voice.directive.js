@@ -7,6 +7,8 @@ app.directive('googleVoice', function(SpeechFactory) {
 
       var final_transcript;
       var recognizing = false;
+      scope.icon = "fa-play-circle";
+      scope.recordButtonMessage = "Start recording";
 
       if (!('webkitSpeechRecognition' in window)) {
         upgrade();
@@ -17,7 +19,10 @@ app.directive('googleVoice', function(SpeechFactory) {
         recognition.interimResults = true;
 
         recognition.onstart = function(event) {
-          console.log('RECORDING STARTED')
+          console.log('RECORDING STARTED');
+          scope.icon = "fa-stop-circle";
+          scope.recordButtonMessage = "Stop recording";
+          scope.$digest();
           recognizing = true;
         }
 
@@ -39,6 +44,9 @@ app.directive('googleVoice', function(SpeechFactory) {
         recognition.onend = function() {
           console.log('RECORDING ENDED: ', final_transcript);
           SpeechFactory.setDreamText(final_transcript);
+          scope.icon = "fa-play-circle";
+          scope.recordButtonMessage = "Start recording";
+          scope.$digest();
           recognizing = false;
         }
       }
