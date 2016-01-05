@@ -33,6 +33,9 @@ var seedUsers = function() {
   }, {
     email: 'obama@gmail.com',
     password: 'potus'
+  }, {
+    email: 'lily@lilyjen.com', 
+    password: 'lilyjen'
   }];
 
   return User.createAsync(users);
@@ -49,7 +52,43 @@ var seedTags = function() {
     tagName: 'guilt'
   }, {
     tagName: 'stress'
-  }]
+  }, {
+    tagName: 'recurring'
+  }, {
+    tagName: 'water'
+  }, {
+    tagName: 'vehicles'
+  }, {
+    tagName: 'school'
+  }, {
+    tagName: 'death'
+  }, {
+    tagName: 'flying'
+  }, {
+    tagName: 'falling'
+  }, {
+    tagName: 'sex'
+  }, {
+    tagName: 'childhood'
+  }, {
+    tagName: 'food'
+  }, {
+    tagName: 'house'
+  }, {
+    tagName: 'teeth falling out'
+  }, {
+    tagName: 'naked'
+  }, {
+    tagName: 'being chased'
+  }, {
+    tagName: 'left something behind'
+  }, {
+    tagName: 'scared'
+  }, {
+    tagName: 'needed to pee'
+  }];
+
+  tags = tags.sort();
 
   return Tag.createAsync(tags);
 }
@@ -60,12 +99,33 @@ var seedDreams = function() {
 
   var dreams = [{
     content: 'I had a dream that one day, our children would be judged by the content of their character and not by the color of their skin.', 
-    title: 'Martin Luther King Jr. Dream'
+    title: 'Martin Luther King Jr. Dream', 
+    tags: ['recurring'], 
+    date: new Date(1963, 07, 28, 8, 17, 0), 
+    location: [38.887859, -77.010255]
   }, {
-    content: 'I went go-kart racing with my ex-boss.'
+    content: 'I went go-kart racing with my ex-boss.', 
+    date: new Date(2015, 11, 28, 5, 39, 0), 
+    tags: ['stress', 'nightmare', 'guilt', 'naked'],
+    location: [41.8170512, -71.4561999]
   }, {
-    content: 'I actually had animals for hands.', 
-    title: 'Animals'
+    content: 'I ~actually~ had animals for hands.', 
+    title: 'Animals for hands',
+    tags: ['scared', 'nightmare'], 
+    date: new Date(1991, 03, 13, 4, 50, 0), 
+    location: [52.507629, 13.144959]
+  }, {
+    content: 'I kissed a ghost and I liked it.', 
+    title: 'I kissed a ghost and I liked it',
+    tags: ['sex', 'romance', 'scared', 'recurring'], 
+    date: new Date(1893, 01, 20, 3, 02, 0), 
+    location: [37.7577627, -122.4726194]
+  }, {
+    content: 'I fell through an elevator shaft… for what felt like years. Eventually, though, I landed into an ocean and drowned to death. ', 
+    title: 'Endlessly falling, or so it seemed',
+    tags: ['falling', 'scared', 'water', 'death'],
+    date: new Date(2020, 10, 19, 12, 00, 0), 
+    location: [-26.1713505, 27.9699845]
   }]; 
 
   return User.findOneAsync({
