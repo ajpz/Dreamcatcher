@@ -7,7 +7,7 @@
         <p class="dream-date text-center">{{ dream.date | date: 'medium' }}</span>
         <hr class="text-center">
         <p class="dream-content">{{ dream.content}}</p>
-        <span class="label label-default dream-tag" ng-repeat="tag in dream.tags">{{ tag.tagName }}</span>
+        <span class="label label-default dream-tag" ng-repeat="tag in dream.tags">{{ tag }}</span>
       </article>
     </div>
   </div>
