@@ -17,6 +17,7 @@ app.config(function($stateProvider) {
 app.controller('BrowseDreamCtrl', function($scope, dreams) {
   console.log('ctrl ran: ', dreams)
 
+  $scope.selectedTag = ''; // default to all tags
   $scope.dreams = dreams; 
 
 }); 

@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2" ng-repeat="dream in dreams">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2" ng-repeat="dream in dreams | tagFilter: selectedTag">
       <article class="dream box">
         <h2 class="dream-title text-center">{{ dream.title }}</h2>
         <p class="dream-date text-center">{{ dream.date | date: 'medium' }}</span>

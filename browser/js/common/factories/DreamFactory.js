@@ -6,6 +6,7 @@ app.factory('DreamFactory', function($http) {
 
   var exports = {
     getDreams: function() {
+
       return $http.get('/api/dreams')
         .then(extractData)
     }, 
