@@ -1,9 +1,17 @@
+@import 'variables';
 * {
   box-sizing: border-box;
 }
 
+
+/* General styles */
+
 body {
-  background: #fdfdfd;
+  background: url(bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 @mixin clearfix {
@@ -15,11 +23,63 @@ body {
 }
 
 #main {
-  padding-top: 60px;
+  padding-top: 50px;
   margin: 0 auto;
 }
 
+
+/* Box style */
+
+.box {
+  display: block;
+  background-color: rgba(17, 29, 53, 0.65);
+  padding: 15px;
+  margin-bottom: 25px;
+  -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.29);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.29);
+}
+
+
+/* Header styles */
+
+h2 {
+  font-family: $header-font-stack;
+  color: $super-bright-blue;
+}
+
+
+/* Form styles */
+
+.form-group {
+  label {
+    color: $super-bright-blue;
+    font-family: $header-font-stack;
+    font-size: 14px;
+  }
+  input.form-control {
+    background-color: $darkest-blue;
+    color: white;
+    border: 0px;
+    border-radius: 25px;
+  }
+}
+
+
+/* Button styles */
+
+.bright-button {
+  font-family: $header-font-stack;
+  float: right;
+  border: 0px solid black;
+  border-radius: 5px;
+  margin-top: 10px;
+  background: $neon-green;
+  outline: none !important;
+}
+
 @import 'directives/main';
+@import 'dreams/main';
 @import 'home/main';
 @import 'about/main';
 @import 'tutorial/main';

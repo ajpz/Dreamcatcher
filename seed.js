@@ -59,11 +59,13 @@ var seedDreams = function() {
   var userId;
 
   var dreams = [{
-    content: 'I had a dream that one day, our children would be judged by the content of their character and not by the color of their skin.'
+    content: 'I had a dream that one day, our children would be judged by the content of their character and not by the color of their skin.', 
+    title: 'Martin Luther King Jr. Dream'
   }, {
     content: 'I went go-kart racing with my ex-boss.'
   }, {
-    content: 'I actually had animals for hands.'
+    content: 'I actually had animals for hands.', 
+    title: 'Animals'
   }]; 
 
   return User.findOneAsync({

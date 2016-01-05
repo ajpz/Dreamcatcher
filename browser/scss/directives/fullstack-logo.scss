@@ -1,7 +1,22 @@
+@import '../variables';
+
 fullstack-logo {
+  float: left; 
   display: block;
   img {
     display: block;
-    width: 100%;
+    float: left;
+    height: 40px;
+    width: auto;
+    padding-right: 5px;
+    padding-top: 5px;
+
+  }
+  #page-title {
+    display: inline-block;
+    margin-top: 12px;
+    color: $super-bright-blue;
+    font-family: $header-font-stack;
+    font-size: 18px;
   }
 }

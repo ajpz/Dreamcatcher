@@ -1,0 +1,23 @@
+@import '../variables';
+
+article.dream {
+  hr {
+    border: 0;
+    width: 150px;
+    height: 1px;
+    background: $medium-blue;
+  }
+  p.dream-content {
+    color: $medium-blue;
+    font-family: $content-font-stack;
+  }
+  p.dream-date {
+    font-family: $content-font-stack;
+    color: $medium-blue;
+    font-size: 11px;
+  }
+  span .dream-tag .label-default {
+    background-color: $super-bright-blue;
+    color: $darkest-blue;
+  }
+}

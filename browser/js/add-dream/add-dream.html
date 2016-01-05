@@ -1,14 +1,33 @@
+<!-- <pre>{{tags}}</pre>
+<pre>{{dream}}</pre> -->
 
-<pre>{{tags}}</pre>
-<pre>{{dream}}</pre>
+<div class='container'>
 
-<text-angular name="wysiwig-form" ng-model="dream.content"></text-angular>
+  <div class="row">
 
-<oi-select
-    oi-options="tag for tag in tags"
-    ng-model="dream.tags"
-    multiple
-    placeholder="Select"
-    ></oi-select>
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
 
-<button ng-click="addDream()">Add dream to your diary</button>
+      <div class="box clearfix">
+
+        <h2>Write <!--or read -->your dream</h2>
+
+        <div class="dream-title form-group">
+          <label for="title">Give your dream a title (optional)</label><br/>
+          <input name="title" class="form-control" type="text" ng-model="dream.title" placeholder="I dreamed a dream…">
+        </div>
+
+        <text-angular name="wysiwig-form" ng-model="dream.content"></text-angular>
+
+        <h2>Add Tags to describe your dream</h2>
+
+        <oi-select oi-options="tag for tag in tags" ng-model="dream.tags" multiple placeholder="Select"></oi-select>
+
+        <button id="add-dream-btn" class="btn bright-button btn-lg" ng-click="addDream()">Add dream to your diary</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
