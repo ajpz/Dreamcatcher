@@ -51,17 +51,18 @@ h2 {
 
 /* Form styles */
 
+.form-control {
+  background-color: $darkest-blue;
+  color: white;
+  border: 0px;
+  border-radius: 25px;
+}
+
 .form-group {
   label {
     color: $super-bright-blue;
     font-family: $header-font-stack;
     font-size: 14px;
-  }
-  input.form-control {
-    background-color: $darkest-blue;
-    color: white;
-    border: 0px;
-    border-radius: 25px;
   }
 }
 
