@@ -11,7 +11,7 @@ app.config(function($stateProvider) {
 })
 
 
-app.controller('AddDreamCtrl', function($scope, DreamFactory, Session, $state, TagFactory) {
+app.controller('AddDreamCtrl', function($scope, $rootScope, DreamFactory, Session, $state, TagFactory, SpeechFactory) {
 
   TagFactory.getTags()
     .then(function(tags) {
@@ -23,6 +23,15 @@ app.controller('AddDreamCtrl', function($scope, DreamFactory, Session, $state, T
 
   $scope.dream = {}; 
   $scope.dream.user = Session.user._id;  
+  $scope.dream.content = ''; 
+
+  $rootScope.$on('dreamSpoken', function(newValue, oldValue) {
+    console.log('watch worked!!!!!')
+    if(newValue !== oldValue) {
+     $scope.dream.content += SpeechFactory.getDreamText(); 
+     $scope.$apply();    
+    }
+  }); 
 
   $scope.addDream = function() {
     console.log('addDream invoked')
